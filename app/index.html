@@ -12,20 +12,66 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="styles/bootstrap.css">
+    <link rel="stylesheet" href="styles/bootstrap-select.css">
     <link rel="stylesheet" href="styles/main.css">
+    
+   <script src="scripts/jquery.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <script src="scripts/bootstrap-select.js"></script>
     <script src="scripts/angular.js"></script>
     <script src="scripts/app.js"></script>
+      
   </head>
   <body ng-controller="primerAppController">
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation"></div>
-    </div>
-    <div class="jumbotron">
-        Hola
-    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Convertidor de divisas</a>
+        </div>
+      </div>
+    </nav>
+      <div class="row">
+        <div class="col-md-4"></div>
+          <div class="col-md-5"><input type="number" id="valor">
+            <select class="selectpicker">
+              <option data-content="<img src='images/m.png'> MXN"></option>
+              <option data-content="<img src='images/us.png'> USD"></option>
+              <option data-content="<img src='images/eu.png'> EUR"></option>
+              <option data-content="<img src='images/j.png'> YEN"></option>
+              <option data-content="<img src='images/c.png'> CAN"></option>
+              <option data-content="<img src='images/uk.png'> UKM"></option>
+            </select></div>
+          <div class="col-md-2"></div>
+          </div>
+      <hr>
+      <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-5">
+             <label class="checkbox-inline"><input type="checkbox" value="">MXN</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">USD</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">EUR</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">YEN</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">CAN</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">UKM</label>
+          </div>
+          <div class="col-md-2"></div>
+      </div>
+     
+    
+    <table class="table table-striped" id="tabla">
+        <tr id="table_header">
+            <th>Divisa</th>
+            <th>Valor</th>
+            <th></th>
+        </tr>
+         <tbody>
+            <tr ng-repeat="item in empleados.acciones">
+            </tr>
+        </tbody>
+    </table>
+    
     <div class="footer">
       <div class="container">
-        <p>Done with the Yeoman</p>
       </div>
     </div>
 </body>
