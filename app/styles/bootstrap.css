@@ -10,6 +10,7 @@ html {
       -ms-text-size-adjust: 100%;
 }
 body {
+ text-align: center;
   margin: 0;
   overflow: hidden;
 }
@@ -23,7 +24,6 @@ header,
 hgroup,
 main,
 menu,
-nav,
 section,
 summary {
   display: block;
@@ -4494,8 +4494,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color:#7FAB79;
+  border-color:#477057;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -6756,3 +6756,13 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+
+body {
+    
+}
+
+body {
+    background: white;
+}
+
+

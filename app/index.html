@@ -14,62 +14,48 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/bootstrap-select.css">
     <link rel="stylesheet" href="styles/main.css">
-    
-   <script src="scripts/jquery.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/jquery.js"></script>
     <script src="scripts/bootstrap.js"></script>
     <script src="scripts/bootstrap-select.js"></script>
-    <script src="scripts/angular.js"></script>
-    <script src="scripts/app.js"></script>
       
   </head>
   <body ng-controller="primerAppController">
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Convertidor de divisas</a>
-        </div>
-      </div>
+    <nav class="navbar">
+            <h3>Convertidor de divisas</h3>
     </nav>
-      <div class="row">
+      <div class="row jumbotron">
         <div class="col-md-4"></div>
-          <div class="col-md-5"><input type="number" id="valor">
-            <select class="selectpicker">
-              <option data-content="<img src='images/m.png'> MXN"></option>
-              <option data-content="<img src='images/us.png'> USD"></option>
-              <option data-content="<img src='images/eu.png'> EUR"></option>
-              <option data-content="<img src='images/j.png'> YEN"></option>
-              <option data-content="<img src='images/c.png'> CAN"></option>
-              <option data-content="<img src='images/uk.png'> UKM"></option>
+          <div class="col-md-4"><input type="number" id="valor">
+            <select ng-model="original" ng-init="original='mxn'" class="selectpicker">
+              <option data-content="<img src='images/m.png'> MXN" value="mxn"></option>
+              <option data-content="<img src='images/us.png'> USD" value="usd"></option>
+              <option data-content="<img src='images/eu.png'> EUR" value="eur"></option>
+              <option data-content="<img src='images/j.png'> JPY" value="jpy"></option>
+              <option data-content="<img src='images/c.png'> CAD" value="cad"></option>
+              <option data-content="<img src='images/uk.png'> GBP" value="gbp"></option>
             </select></div>
-          <div class="col-md-2"></div>
-          </div>
-      <hr>
+          <div class="col-md-4"></div>
+      </div>
       <div class="row">
           <div class="col-md-4"></div>
-          <div class="col-md-5">
-             <label class="checkbox-inline"><input type="checkbox" value="">MXN</label>
-              <label class="checkbox-inline"><input type="checkbox" value="">USD</label>
-              <label class="checkbox-inline"><input type="checkbox" value="">EUR</label>
-              <label class="checkbox-inline"><input type="checkbox" value="">YEN</label>
-              <label class="checkbox-inline"><input type="checkbox" value="">CAN</label>
-              <label class="checkbox-inline"><input type="checkbox" value="">UKM</label>
+          <div class="col-md-4">
+             <label class="checkbox-inline"><input type="checkbox" ng-model="mxnRes">MXN</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="usdRes">USD</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="eurRes">EUR</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="jpyRes">JPY</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="cadRes">CAD</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="gbpRes">GBP</label>
           </div>
           <div class="col-md-2"></div>
       </div>
-     
-    
-    <table class="table table-striped" id="tabla">
-        <tr id="table_header">
-            <th>Divisa</th>
-            <th>Valor</th>
-            <th></th>
-        </tr>
-         <tbody>
-            <tr ng-repeat="item in empleados.acciones">
-            </tr>
-        </tbody>
-    </table>
-    
+      <br>
+      <div class="row" ng-repeat="item in conversiones.valores">
+          <div class="col-md-4"></div>
+          <div class="col-md-2"><label>{{item.nombre}}</label></div>
+          <div class="col-md-2"><label>{{item.valor}}</label></div>
+          <div class="col-md-4"></div>
+      </div>
     <div class="footer">
       <div class="container">
       </div>
