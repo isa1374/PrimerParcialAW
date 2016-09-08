@@ -1,4 +1,18 @@
-
 #valor {
     height:45px;
+    border: 0px solid;
+    border-radius:5px;
+}
+h3 {
+    color:white;
+}
+.navbar {
+    background:#7FAB79;
+    margin-bottom: 0;
+}
+.jumbotron{
+    background: #D4E3AD;
+}
+input[type=checkbox] {
+  transform: scale(1.5);
 }
