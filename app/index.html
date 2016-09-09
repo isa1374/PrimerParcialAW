@@ -14,6 +14,7 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
     <link rel="stylesheet" href="styles/bootstrap.css">
     <link rel="stylesheet" href="styles/bootstrap-select.css">
     <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/angular.js"></script> 
     <script src="scripts/app.js"></script>
     <script src="scripts/jquery.js"></script>
     <script src="scripts/bootstrap.js"></script>
@@ -26,34 +27,34 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
     </nav>
       <div class="row jumbotron">
         <div class="col-md-4"></div>
-          <div class="col-md-4"><input type="number" id="valor" ng-model="cantidad">
-            <select ng-model="original" ng-init="original='mxn'" class="selectpicker">
-              <option data-content="<img src='images/m.png'> MXN" value="mxn"></option>
-              <option data-content="<img src='images/us.png'> USD" value="usd"></option>
-              <option data-content="<img src='images/eu.png'> EUR" value="eur"></option>
-              <option data-content="<img src='images/j.png'> JPY" value="jpy"></option>
-              <option data-content="<img src='images/c.png'> CAD" value="cad"></option>
-              <option data-content="<img src='images/uk.png'> GBP" value="gbp"></option>
+          <div class="col-md-4"><input type="number" id="valor" ng-model="valor" ng-change="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes)">
+            <select ng-model="original" ng-init="original='MXN'" class="selectpicker" ng-change="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes)">
+              <option data-content="<img src='images/m.png'> MXN" value="MXN"></option>
+              <option data-content="<img src='images/us.png'> USD" value="USD"></option>
+              <option data-content="<img src='images/eu.png'> EUR" value="EUR"></option>
+              <option data-content="<img src='images/j.png'> JPY" value="JPY"></option>
+              <option data-content="<img src='images/c.png'> CAD" value="CAD"></option>
+              <option data-content="<img src='images/uk.png'> GBP" value="GBP"></option>
             </select></div>
           <div class="col-md-4"></div>
       </div>
       <div class="row">
           <div class="col-md-4"></div>
           <div class="col-md-4">
-             <label class="checkbox-inline"><input type="checkbox" ng-model="mxnRes" ng-click="calcular(item)">MXN</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">USD</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">EUR</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">JPY</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">CAD</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">GBP</label>
+             <label class="checkbox-inline"><input type="checkbox" ng-model="mxnRes" ng-click="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes)">MXN</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="usdRes" ng-click="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes) ">USD</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="eurRes" ng-click="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes)">EUR</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="jpyRes" ng-click="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes)">JPY</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="cadRes" ng-click="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes)">CAD</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="gbpRes" ng-click="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes)" checked>GBP</label>
           </div>
           <div class="col-md-2"></div>
       </div>
       <br>
-      <div class="row" ng-repeat="item in conversiones.valores">
+      <div class="row" ng-repeat="item in conversiones.resultado">
           <div class="col-md-4"></div>
           <div class="col-md-2"><label>{{item.nombre}}</label></div>
-          <div class="col-md-2"><label>{{item.resultado}}</label></div>
+          <div class="col-md-2"><label>{{item.valor}}</label></div>
           <div class="col-md-4"></div>
       </div>
     <div class="footer">
