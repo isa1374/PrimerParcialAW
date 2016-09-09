@@ -1,3 +1,7 @@
+body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 #valor {
     height:45px;
     border: 0px solid;
@@ -16,4 +20,11 @@ h3 {
 }
 input[type=checkbox] {
   transform: scale(1.5);
+}
+#menu_checkbox{
+    margin-top:-3%;
+    padding-top:2%;
+    padding-bottom:2%;
+    color:white;
+    background:#88AB53;
 }

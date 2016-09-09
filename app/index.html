@@ -38,7 +38,7 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
             </select></div>
           <div class="col-md-4"></div>
       </div>
-      <div class="row">
+      <div class="row" id="menu_checkbox">
           <div class="col-md-4"></div>
           <div class="col-md-4">
              <label class="checkbox-inline"><input type="checkbox" ng-model="mxnRes" ng-click="calcular(valor,original,mxnRes,usdRes,eurRes,jpyRes,cadRes,gbpRes)">MXN</label>
@@ -51,15 +51,18 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
           <div class="col-md-2"></div>
       </div>
       <br>
-      <div class="row" ng-repeat="item in conversiones.resultado">
-          <div class="col-md-4"></div>
-          <div class="col-md-2"><label>{{item.nombre}}</label></div>
-          <div class="col-md-2"><label>{{item.valor}}</label></div>
-          <div class="col-md-4"></div>
+      <div  ng-repeat="item in conversiones.resultado">
+            <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4"><div class="col-md-2"><img ng-src={{item.imagen}}></div><div class="col-md-4"><label>{{item.nombre}}</label></div>
+                  <div class="col-md-6">{{item.valor}}</div></div>
+              <div class="col-md-4"></div>
+          </div>
+          <hr>
       </div>
     <div class="footer">
       <div class="container">
       </div>
     </div>
-</body>
+          </body>
 </html>
