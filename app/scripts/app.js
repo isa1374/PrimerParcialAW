@@ -1,9 +1,9 @@
 var primerApp= angular.module("primerApp", []);
 var modelo={base:'USD',
  valores:[{nombre:'USD', valor:'1'},
-          {nombre:'MXN', valor:'18.4'},
+          {nombre:'MXN', valor:'18.83'},
           {nombre:'CAD', valor:'1.3'},
-          {nombre:'JPY', valor:'101.73'},
+          {nombre:'JPY', valor:'102.87'},
           {nombre:'GBP', valor:'0.75'},
           {nombre:'EUR', valor:'0.89'}],
  resultado:[]};
