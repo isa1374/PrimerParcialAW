@@ -28,9 +28,9 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
       <div class="row jumbotron">
         <div class="col-md-4"></div>
           <div class="col-md-4"><input type="number" id="valor" ng-model="valor" ng-change="calcular(valor,original)">
-            <select ng-model="original" ng-init="original='0'" class="selectpicker" ng-change="calcular(valor,original)">
+            <select ng-model="original" ng-init="original='USD'" class="selectpicker" ng-change="calcular(valor,original)">
             <option ng-repeat="item in conversiones.valores" data-content="<img src={{item.imagen}}>{{item.nombre}}" ng-value=item.nombre
-                    value='0'></option>
+                    value='USD'></option>
             </select></div>
           <div class="col-md-4"></div>
       </div>

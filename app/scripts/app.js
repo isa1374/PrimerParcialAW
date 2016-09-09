@@ -1,11 +1,7 @@
 var primerApp= angular.module("primerApp", []);
 primerApp.controller("primerAppController", function($scope,$filter,$http,$log){
-    $http.get('./scripts/datos.json').success(function(data){
-        $log.debug(data);
-        $scope.conversiones = data;
-        $log.debug($scope.conversiones.valores);
-    });
     $scope.valor = 1;
+    
     $scope.calcular=function(valor,original){
         /*$http.get('./scripts/datos.json').success(function(data){
             $scope.conversiones = data;
@@ -22,6 +18,12 @@ primerApp.controller("primerAppController", function($scope,$filter,$http,$log){
                 }
         });
     }
+     $http.get('./scripts/datos.json').success(function(data){
+        $log.debug(data);
+        $scope.conversiones = data;
+        $log.debug($scope.conversiones.valores);
+    });
+   
 });
 
 
