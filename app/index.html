@@ -26,7 +26,7 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
     </nav>
       <div class="row jumbotron">
         <div class="col-md-4"></div>
-          <div class="col-md-4"><input type="number" id="valor">
+          <div class="col-md-4"><input type="number" id="valor" ng-model="cantidad">
             <select ng-model="original" ng-init="original='mxn'" class="selectpicker">
               <option data-content="<img src='images/m.png'> MXN" value="mxn"></option>
               <option data-content="<img src='images/us.png'> USD" value="usd"></option>
@@ -40,12 +40,12 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
       <div class="row">
           <div class="col-md-4"></div>
           <div class="col-md-4">
-             <label class="checkbox-inline"><input type="checkbox" ng-model="mxnRes">MXN</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="usdRes">USD</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="eurRes">EUR</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="jpyRes">JPY</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="cadRes">CAD</label>
-              <label class="checkbox-inline"><input type="checkbox" ng-model="gbpRes">GBP</label>
+             <label class="checkbox-inline"><input type="checkbox" ng-model="mxnRes" ng-click="calcular(item)">MXN</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">USD</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">EUR</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">JPY</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">CAD</label>
+              <label class="checkbox-inline"><input type="checkbox" ng-model="convertir" ng-click="calcular(item)">GBP</label>
           </div>
           <div class="col-md-2"></div>
       </div>
@@ -53,7 +53,7 @@ Calculadora dinámica de monedas: Deberás realizar una página donde se pueda c
       <div class="row" ng-repeat="item in conversiones.valores">
           <div class="col-md-4"></div>
           <div class="col-md-2"><label>{{item.nombre}}</label></div>
-          <div class="col-md-2"><label>{{item.valor}}</label></div>
+          <div class="col-md-2"><label>{{item.resultado}}</label></div>
           <div class="col-md-4"></div>
       </div>
     <div class="footer">
