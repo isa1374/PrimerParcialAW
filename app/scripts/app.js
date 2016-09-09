@@ -1,10 +1,16 @@
 var primerApp= angular.module("primerApp", []);
-primerApp.controller("primerAppController", function($scope,$filter,$http){
+primerApp.controller("primerAppController", function($scope,$filter,$http,$log){
+    $http.get('./scripts/datos.json').success(function(data){
+        $log.debug(data);
+        $scope.conversiones = data;
+        $log.debug($scope.conversiones.valores);
+    });
     $scope.valor = 1;
     $scope.calcular=function(valor,original){
-        $http.get('./scripts/datos.json').success(function(data){
+        /*$http.get('./scripts/datos.json').success(function(data){
             $scope.conversiones = data;
-        });
+            
+        });*/
         $scope.conversiones.resultado=[];
         var or=[];
         or=$filter('filter')($scope.conversiones.valores,{nombre:original});
@@ -17,6 +23,7 @@ primerApp.controller("primerAppController", function($scope,$filter,$http){
         });
     }
 });
+
 
 
 
